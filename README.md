@@ -7,9 +7,9 @@ Put this code inside your ~/.bashrc or create a bash script if you want:
 
 <code>EPG_LIST() {
 paste -d">" <(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^C " |awk '{print substr($0, index($0,$3))}') \
-<(grep -A4 "^C " /var/cache/vdr/epg.data | grep "^T ") \
-
-<(for ts in $(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^E " |awk '{print $3}'); do date -d @$ts +%H:%M; done) \
+<(grep -A4 "^C " /var/cache/vdr/epg.data | grep "^T ") \</code>
+<br>
+<code><(for ts in $(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^E " |awk '{print $3}'); do date -d @$ts +%H:%M; done) \
 | sed 's/>T/ ==> /g' | column -t -s "==\>"
 }</code>
 
