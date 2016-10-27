@@ -11,8 +11,8 @@ paste -d">" <(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^C
 <br>
 <(for ts in $(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^E " |awk '{print $3}'); do date -d @$ts +%H:%M; done) \
 | sed 's/>T/ ==> /g' | column -t -s "==\>"
-}</code><br>
-<b>As a bash script:</b><br>
+}</code><br><br>
+<b>As a bash script:</b><br><br>
 <code>#!/bin/bash</code>
 <br>
 <code># Simple epg list by karirovax </code>
@@ -20,7 +20,7 @@ paste -d">" <(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^C
 <code>paste -d">" <(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^C " |awk '{print substr($0, index($0,$3))}') \
 <(grep -A4 "^C " /var/cache/vdr/epg.data | grep "^T ") \
 <(for ts in $(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^E " |awk '{print $3}'); do date -d @$ts +%H:%M; done) \
- | sed 's/>T/ ==> /g' | column -t -s "==\>"</code><br>
-<b>PS:</b> This is my first use of github, i like to share anything that can help any user ( English is not my native language )
+ | sed 's/>T/ ==> /g' | column -t -s "==\>"</code><br><br>
+<b>PS:</b> This is my first use of github, i like to share anything that can help any user ( English is not my native language )<br>
  
  Enjoy it! :)
