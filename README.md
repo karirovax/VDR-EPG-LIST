@@ -1,7 +1,7 @@
 # VDR-EPG-LIST
-Get only available channels that have epg and print the result in a format of table ( channel name, epg title, Time, Duration, Elapsed )
+Get only available channels that have <b>EPG</b> and print the result in a format of table ( <b>Channel name, epg title, Time, Duration, Elapsed</b> )
 
-Put this code inside your ~/.bashrc or create a bash script if you want:
+Put this code inside your <code>~/.bashrc</code> or create a bash script if you want:
 
 <b>As a function inside ~/.bashrc:</b>
 
@@ -15,7 +15,7 @@ Put this code inside your ~/.bashrc or create a bash script if you want:
 <(for ts in $(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^E " |awk '{print $2}'); do date -d @$ts +%H:%M; done) \
  | sed 's/>T/==> /g')|sort) | column -t -s "==\>"
 }</code><br><br>
-<b>As a bash script:</b><br><br>
+<b>As a <code>Bash</code> script:</b><br><br>
 <code>#!/bin/bash</code>
 <br>
 <code># Simple epg list by karirovax </code>
