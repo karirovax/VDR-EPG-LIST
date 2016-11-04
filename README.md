@@ -20,7 +20,7 @@ echo " "
 }</code></pre><br><br>
 <b>As a <code>Bash</code> script:</b><br><br>
 <pre><code>#!/bin/bash
-# Simple epg list by karirovax
+&#35; Simple epg list by karirovax
 echo " "
 echo -e "\t\t\e[1;32;100mN°. \e[1;101m Chaîne          \e[44m Titre                        \e[1;32;100m Temps \e[43m Durée   \e[45m Passé \e[0m"
 ((paste -d">" <(grep -A4 "^C " /var/cache/vdr/epg.data | grep -B2 "^T " | grep "^C " |awk '{printf "\t\t\033[1;32;100m%02d  \033[0m\n", NR}') \
